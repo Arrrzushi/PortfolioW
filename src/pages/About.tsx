@@ -1,36 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
 import { useInView } from 'react-intersection-observer';
 
-// Floating 3D object component
-const FloatingObject = () => {
-  return (
-    <Canvas style={{ width: '100%', height: '100%' }}>
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[5, 5, 5]} intensity={1} color="#9000ff" />
-      <directionalLight position={[-5, -5, -5]} intensity={0.5} color="#00e6ff" />
-      
-      <Float 
-        speed={2} 
-        rotationIntensity={1.5} 
-        floatIntensity={2}
-      >
-        <Sphere args={[1.3, 64, 64]}>
-          <MeshDistortMaterial
-            color="#ff00c8"
-            distort={0.4}
-            speed={2}
-            roughness={0.2}
-            metalness={0.8}
-          />
-        </Sphere>
-      </Float>
-    </Canvas>
-  );
-};
+// Create ProfilePhoto component
+const ProfilePhoto = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+`;
 
 const AboutContainer = styled.div`
   width: 100%;
@@ -334,7 +328,9 @@ const About: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ type: 'spring', stiffness: 300, damping: 10 }}
         >
-          <FloatingObject />
+          <ProfilePhoto>
+            <img src="/assets/profile.jpg" alt="Arushi" />
+          </ProfilePhoto>
         </ModelContainer>
       </ContentWrapper>
     </AboutContainer>

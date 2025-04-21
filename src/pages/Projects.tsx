@@ -262,6 +262,50 @@ const projectsData = [
       { title: 'Play', url: '#' },
       { title: 'GitHub', url: '#' }
     ]
+  },
+  {
+    id: 5,
+    title: 'E-Commerce Platform',
+    description: 'A fully responsive e-commerce website with product catalog, shopping cart, and secure payment processing.',
+    tags: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
+    modelType: 'web',
+    links: [
+      { title: 'Shop', url: '#' },
+      { title: 'GitHub', url: '#' }
+    ]
+  },
+  {
+    id: 6,
+    title: 'AI Image Generator',
+    description: 'Web application that creates custom AI-generated images based on user text prompts using state-of-art deep learning models.',
+    tags: ['React', 'Node.js', 'OpenAI API', 'Framer Motion'],
+    modelType: 'design',
+    links: [
+      { title: 'Generate', url: '#' },
+      { title: 'GitHub', url: '#' }
+    ]
+  },
+  {
+    id: 7,
+    title: 'Portfolio Website',
+    description: 'A personal portfolio website showcasing my projects and skills with 3D elements and interactive animations.',
+    tags: ['React', 'Three.js', 'TypeScript', 'GSAP'],
+    modelType: 'web',
+    links: [
+      { title: 'Visit', url: '#' },
+      { title: 'GitHub', url: '#' }
+    ]
+  },
+  {
+    id: 8,
+    title: 'Fitness Tracking App',
+    description: 'Mobile application for tracking workouts, nutrition, and health progress with personalized recommendations.',
+    tags: ['React Native', 'Firebase', 'Redux', 'Expo'],
+    modelType: 'phone',
+    links: [
+      { title: 'Download', url: '#' },
+      { title: 'GitHub', url: '#' }
+    ]
   }
 ];
 
