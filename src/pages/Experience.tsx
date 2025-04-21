@@ -120,7 +120,7 @@ const TimelineDot = styled(motion.div)<{ $isEven: boolean }>`
   }
 `;
 
-const TimelineDate = styled.div`
+const TimelineDate = styled.div<{ $isEven: boolean }>`
   position: absolute;
   top: 20px;
   left: ${props => props.$isEven ? 'auto' : 'calc(50% + 25px)'};

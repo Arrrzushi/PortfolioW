@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { useGLTF, OrbitControls, PresentationControls, Environment } from '@react-three/drei';
-import * as THREE from 'three';
+import { PresentationControls, Environment } from '@react-three/drei';
 
 // Project Card Component with 3D elements
 const ProjectContainer = styled.div`
@@ -168,7 +167,7 @@ const ModelViewer: React.FC<{ modelType: string }> = ({ modelType }) => {
         rotation={[0, 0, 0]}
         polar={[-Math.PI / 4, Math.PI / 4]}
         azimuth={[-Math.PI / 4, Math.PI / 4]}
-        snap={{ mass: 4, tension: 400 }}
+        snap
         speed={1.5}
         zoom={0.8}
       >
