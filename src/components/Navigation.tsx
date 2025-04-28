@@ -50,6 +50,12 @@ const Navigation = () => {
               Experience
             </Link>
             <Link
+              to="/education"
+              className={location.pathname === '/education' ? 'active' : ''}
+            >
+              Education
+            </Link>
+            <Link
               to="/about"
               className={location.pathname === '/about' ? 'active' : ''}
             >
@@ -91,6 +97,12 @@ const Navigation = () => {
             className={location.pathname === '/experience' ? 'active' : ''}
           >
             Experience
+          </Link>
+          <Link
+            to="/education"
+            className={location.pathname === '/education' ? 'active' : ''}
+          >
+            Education
           </Link>
           <Link
             to="/about"

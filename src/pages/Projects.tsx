@@ -86,6 +86,18 @@ const ProjectImage = styled.div`
   width: 100%;
   height: 200px;
   position: relative;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
 `;
 
 const ProjectContent = styled.div`
@@ -221,13 +233,13 @@ const ModelViewer: React.FC<{ modelType: string }> = ({ modelType }) => {
 const projectsData = [
   {
     id: 1,
-    title: 'Social Media Sharing App',
-    description: 'A cross-platform mobile application for sharing moments and connecting with friends, built with Flutter and Firebase.',
-    tags: ['Flutter', 'Firebase', 'Dart', 'Cloud Storage'],
-    modelType: 'phone',
+    title: 'Wakey',
+    description: 'A platform that helps users wake up to their favorite songs and videos.',
+    tags: ['Firebase', 'React', 'Node.js', 'MongoDB'],
+    modelType: 'web and mobile',
+    imageUrl: '/assets/project1.png',
     links: [
-      { title: 'Demo', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'GitHub', url: 'https://github.com/Arrrzushi/WakeUpCall' }
     ]
   },
   {
@@ -236,20 +248,20 @@ const projectsData = [
     description: 'A decentralized platform for submitting and tracking public complaints using blockchain technology.',
     tags: ['React', 'MetaMask', 'TSX', 'Solidity'],
     modelType: 'web',
+    imageUrl: '/assets/project2.png',
     links: [
-      { title: 'Live', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'GitHub', url: 'https://github.com/Arrrzushi/Civic' }
     ]
   },
   {
     id: 3,
-    title: 'LPUTouch Redesign',
-    description: 'A complete UI/UX overhaul of the university portal to enhance user experience and accessibility.',
+    title: 'Virtual Boba Tea Shop',
+    description: 'A cutomized virtual boba tea shop where you can customize your own boba tea.',
     tags: ['React', 'Expo', 'JSON', 'UI/UX'],
     modelType: 'design',
+    imageUrl: '/assets/project3.png',
     links: [
-      { title: 'Live', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'GitHub', url: 'https://github.com/Arrrzushi/BobaTea' }
     ]
   },
   {
@@ -258,42 +270,42 @@ const projectsData = [
     description: 'A collection of 3D game experiments created with Unity and Blender, focusing on interactive environments.',
     tags: ['Unity', 'Blender', 'C#', '3D Modeling'],
     modelType: 'game',
+    imageUrl: '/assets/project4.png',
     links: [
-      { title: 'Play', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'View', url: '/assets/project4.png' }
     ]
   },
   {
     id: 5,
-    title: 'E-Commerce Platform',
-    description: 'A fully responsive e-commerce website with product catalog, shopping cart, and secure payment processing.',
-    tags: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
+    title: 'NFT Marketplace',
+    description: 'A platform for buying and selling NFTs which is built  on blockchain and used with internt identity.',
+    tags: ['Next.js', 'Blockchain', 'Solidity', 'UI/UX'],
     modelType: 'web',
+    imageUrl: '/assets/project5.png',
     links: [
-      { title: 'Shop', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'GitHub', url: 'https://github.com/Arrrzushi/yus.github.io' }
     ]
   },
   {
     id: 6,
-    title: 'AI Image Generator',
-    description: 'Web application that creates custom AI-generated images based on user text prompts using state-of-art deep learning models.',
-    tags: ['React', 'Node.js', 'OpenAI API', 'Framer Motion'],
+    title: 'Blackbow',
+    description: 'Web application that is designed to help users meet other people with similar interests.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     modelType: 'design',
+    imageUrl: '/assets/project6.png',
     links: [
-      { title: 'Generate', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'GitHub', url: 'https://github.com/Arrrzushi/Blackbow' }
     ]
   },
   {
     id: 7,
-    title: 'Portfolio Website',
-    description: 'A personal portfolio website showcasing my projects and skills with 3D elements and interactive animations.',
-    tags: ['React', 'Three.js', 'TypeScript', 'GSAP'],
+    title: 'Evently',
+    description: 'A blockchain-based event management platform that allows users to create, attend, and manage events with ease.',
+    tags: ['React', 'Three.js', 'TypeScript', 'Solidity', 'Dapp', 'Blockchain'],
     modelType: 'web',
+    imageUrl: '/assets/project7.png',
     links: [
-      { title: 'Visit', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'GitHub', url: 'https://github.com/Arrrzushi/wsl' }
     ]
   },
   {
@@ -302,9 +314,42 @@ const projectsData = [
     description: 'Mobile application for tracking workouts, nutrition, and health progress with personalized recommendations.',
     tags: ['React Native', 'Firebase', 'Redux', 'Expo'],
     modelType: 'phone',
+    imageUrl: '/assets/project8.png',
     links: [
-      { title: 'Download', url: '#' },
-      { title: 'GitHub', url: '#' }
+      { title: 'GitHub', url: 'https://github.com/Arrrzushi/Blackbow' }
+    ]
+  },
+  {
+    id: 9,
+    title: 'Robot Character',
+    description: 'A detailed 3D robot character model created in Blender with texturing and rigging for animation.',
+    tags: ['Blender', '3D Modeling', 'Texturing', 'Rigging'],
+    modelType: 'design',
+    imageUrl: '/assets/project9.png',
+    links: [
+      { title: 'View', url: '/assets/project9.png' }
+    ]
+  },
+  {
+    id: 10,
+    title: 'Cozy Cafe Scene',
+    description: 'A warm and inviting 3D cafe interior scene created in Blender with lighting and materials.',
+    tags: ['Blender', '3D Modeling', 'Lighting', 'Materials'],
+    modelType: 'design',
+    imageUrl: '/assets/project10.png',
+    links: [
+      { title: 'View', url: '/assets/project10.png' }
+    ]
+  },
+  {
+    id: 11,
+    title: 'Granny Character',
+    description: 'A charming and detailed 3D granny character model with clothing and accessories created in Blender.',
+    tags: ['Blender', '3D Modeling', 'Character Design', 'Sculpting'],
+    modelType: 'design',
+    imageUrl: '/assets/project11.png',
+    links: [
+      { title: 'View', url: '/assets/project11.png' }
     ]
   }
 ];
@@ -342,7 +387,11 @@ const Projects: React.FC = () => {
             whileHover={{ scale: 1.02 }}
           >
             <ProjectImage>
-              <ModelViewer modelType={project.modelType} />
+              {project.imageUrl ? (
+                <img src={project.imageUrl} alt={project.title} />
+              ) : (
+                <ModelViewer modelType={project.modelType} />
+              )}
             </ProjectImage>
             
             <ProjectContent>
@@ -361,7 +410,7 @@ const Projects: React.FC = () => {
                   <ProjectLink
                     key={i}
                     href={link.url}
-                    target="_blank"
+                    target={link.url.startsWith('#/view') ? '_self' : '_blank'}
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

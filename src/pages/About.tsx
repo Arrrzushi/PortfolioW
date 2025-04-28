@@ -136,49 +136,16 @@ const GlitchText = styled(motion.div)`
   display: inline-block;
   text-shadow: var(--glow-magenta);
   
-  &::before, &::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-  }
-  
-  &::before {
-    color: var(--accent-cyan);
-    z-index: -1;
-    animation: glitch-animation 2s infinite linear alternate-reverse;
-    text-shadow: var(--glow-cyan);
-  }
-  
   &::after {
-    color: var(--accent-purple);
-    z-index: -2;
-    animation: glitch-animation 3s infinite linear alternate-reverse;
-    text-shadow: var(--glow-purple);
+    content: '|';
+    margin-left: 2px;
+    color: var(--accent-cyan);
+    animation: blink 1s step-end infinite;
   }
   
-  @keyframes glitch-animation {
-    0% {
-      transform: translate(0);
-    }
-    20% {
-      transform: translate(-3px, 3px);
-    }
-    40% {
-      transform: translate(-3px, -3px);
-    }
-    60% {
-      transform: translate(3px, 3px);
-    }
-    80% {
-      transform: translate(3px, -3px);
-    }
-    100% {
-      transform: translate(0);
-    }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
 `;
 
@@ -214,7 +181,6 @@ const About: React.FC = () => {
   });
   
   const [typewriterText, setTypewriterText] = useState('');
-  const fullText = "Blending Code & Creativity";
   
   useEffect(() => {
     if (inView) {
@@ -222,19 +188,10 @@ const About: React.FC = () => {
     }
   }, [controls, inView]);
   
-  // Typewriter effect for the highlighted text
+  // Simple typewriter effect with no animations or typos
   useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setTypewriterText(fullText.substring(0, index + 1));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
-    
-    return () => clearInterval(timer);
+    // Just set the full text directly
+    setTypewriterText("Blending Code & Creativity");
   }, []);
   
   return (
@@ -267,7 +224,7 @@ const About: React.FC = () => {
             Hey there! I'm <HighlightText>Arushi</HighlightText>, a passionate developer and designer with a love for creating immersive digital experiences that blend technology with creativity.
           </Paragraph>
           
-          <GlitchText data-text={typewriterText}>
+          <GlitchText>
             {typewriterText}
           </GlitchText>
           
