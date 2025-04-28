@@ -1,4 +1,3 @@
-import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import Background3D from './components/Background3D';
